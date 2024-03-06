@@ -49,3 +49,4 @@ class pageAuthSignIn {
 
 // Initialize when page loads
 One.onLoad(() => pageAuthSignIn.init());
+;

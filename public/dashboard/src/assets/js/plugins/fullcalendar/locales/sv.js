@@ -45,3 +45,4 @@ FullCalendar.globalLocales.push(function () {
   return sv;
 
 }());
+;

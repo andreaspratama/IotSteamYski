@@ -53,3 +53,4 @@ export var Persian = {
 };
 fp.l10ns.fa = Persian;
 export default fp.l10ns;
+;

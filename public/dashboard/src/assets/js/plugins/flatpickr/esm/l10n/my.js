@@ -54,3 +54,4 @@ export var Burmese = {
 };
 fp.l10ns.my = Burmese;
 export default fp.l10ns;
+;

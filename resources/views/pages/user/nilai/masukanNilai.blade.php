@@ -44,7 +44,7 @@
                     </div>
                     <div class="col-lg-12 space-y-5">
                         <!-- Form Labels on top - Default Style -->
-                        <form action="/user/masukanNilaiStore/{{$item->id}}/{{$sub->id}}" method="POST">
+                        <form action="/user/masukanNilaiStoreIot/{{$item->id}}/{{$sub->id}}" method="POST">
                             @csrf 
                             <div class="mb-4">
                                 <label class="form-label" for="example-ltf-email">Kompetensi</label>
@@ -253,7 +253,7 @@
                             @endif --}}
                             <div class="mb-4">
                             <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="/user/siswaNilai/{{$item->id}}" class="btn btn-secondary">Batal</a>
+                            <a href="/user/siswaNilaiIot/{{$item->id}}" class="btn btn-secondary">Batal</a>
                             </div>
                         </form>
                         <!-- END Form Labels on top - Default Style -->

@@ -60,3 +60,4 @@ export var French = {
 };
 fp.l10ns.fr = French;
 export default fp.l10ns;
+;

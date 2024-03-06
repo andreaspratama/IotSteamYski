@@ -20,3 +20,4 @@ function labelPlugin() {
     };
 }
 export default labelPlugin;
+;

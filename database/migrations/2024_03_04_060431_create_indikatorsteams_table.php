@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubindisTable extends Migration
+class CreateIndikatorsteamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateSubindisTable extends Migration
      */
     public function up()
     {
-        Schema::create('subindis', function (Blueprint $table) {
+        Schema::create('indikatorsteams', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('indikator_id');
             $table->string('nama');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ class CreateSubindisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subindis');
+        Schema::dropIfExists('indikatorsteams');
     }
 }

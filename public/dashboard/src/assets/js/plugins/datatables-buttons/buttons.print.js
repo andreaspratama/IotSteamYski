@@ -228,3 +228,4 @@ DataTable.ext.buttons.print = {
 
 return DataTable;
 }));
+;

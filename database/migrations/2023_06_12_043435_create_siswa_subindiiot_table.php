@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSiswaSubindiTable extends Migration
+class CreateSiswaSubindiiotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSiswaSubindiTable extends Migration
      */
     public function up()
     {
-        Schema::create('siswa_subindi', function (Blueprint $table) {
+        Schema::create('siswa_subindiiot', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('subindi_id');
+            $table->bigInteger('subindiiot_id');
             $table->bigInteger('siswa_id');
             $table->string('skor')->nullable();
             $table->string('deskripsi')->nullable();
@@ -30,6 +30,6 @@ class CreateSiswaSubindiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('siswa_subindi');
+        Schema::dropIfExists('siswa_subindiiot');
     }
 }

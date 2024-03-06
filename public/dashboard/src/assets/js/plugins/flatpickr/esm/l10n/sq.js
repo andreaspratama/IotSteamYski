@@ -57,3 +57,4 @@ export var Albanian = {
 };
 fp.l10ns.sq = Albanian;
 export default fp.l10ns;
+;

@@ -2044,3 +2044,4 @@ if (typeof window !== "undefined") {
     window.flatpickr = flatpickr;
 }
 export default flatpickr;
+;

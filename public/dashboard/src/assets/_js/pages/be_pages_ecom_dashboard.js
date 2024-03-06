@@ -108,3 +108,4 @@ class pageEcomDashboard {
 
 // Initialize when page loads
 One.onLoad(() => pageEcomDashboard.init());
+;

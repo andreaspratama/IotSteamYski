@@ -51,3 +51,4 @@ export var Vietnamese = {
 };
 fp.l10ns.vn = Vietnamese;
 export default fp.l10ns;
+;

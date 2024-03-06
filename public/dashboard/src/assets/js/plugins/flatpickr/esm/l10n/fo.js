@@ -59,3 +59,4 @@ export var Faroese = {
 };
 fp.l10ns.fo = Faroese;
 export default fp.l10ns;
+;

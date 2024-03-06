@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKompindisTable extends Migration
+class CreateSiswaSubindisteamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateKompindisTable extends Migration
      */
     public function up()
     {
-        Schema::create('kompindis', function (Blueprint $table) {
+        Schema::create('siswa_subindisteam', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('subindi_id');
-            $table->string('nama');
+            $table->bigInteger('subindisteam_id');
+            $table->bigInteger('siswa_id');
+            $table->string('skor')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateKompindisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kompindis');
+        Schema::dropIfExists('siswa_subindisteam');
     }
 }

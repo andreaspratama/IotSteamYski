@@ -22,3 +22,4 @@ FullCalendar.globalLocales.push(function () {
   return he;
 
 }());
+;

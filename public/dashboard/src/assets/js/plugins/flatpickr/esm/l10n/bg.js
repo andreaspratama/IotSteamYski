@@ -51,3 +51,4 @@ export var Bulgarian = {
 };
 fp.l10ns.bg = Bulgarian;
 export default fp.l10ns;
+;

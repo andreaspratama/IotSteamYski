@@ -52,3 +52,4 @@ export var SerbianCyrillic = {
 };
 fp.l10ns.sr = SerbianCyrillic;
 export default fp.l10ns;
+;

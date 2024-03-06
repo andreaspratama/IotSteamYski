@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Create Sub Indikator
+    List Indikator Steam
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2">
               <div class="flex-grow-1">
                 <h1 class="h3 fw-bold mb-2">
-                  List Daftar Sub Indikator
+                  List Daftar Indikator Steam
                 </h1>
                 {{-- <h2 class="fs-base lh-base fw-medium text-muted mb-0">
                   Carefully designed elements that will ensure a great experience for your users.
@@ -37,7 +37,7 @@
                     @endif
                   </li>
                   <li class="breadcrumb-item" aria-current="page">
-                    Sub Indikator
+                    Indikator
                   </li>
                 </ol>
               </nav>
@@ -53,19 +53,19 @@
                 <!-- Default Table -->
                 <div class="block block-rounded">
                   <div class="block-header block-header-default">
-                    <h3 class="block-title">Sub Indikator</h3>
+                    <h3 class="block-title">Indikator</h3>
                     <div class="block-options">
                       <div class="block-options-item">
-                        <a href="{{route('subindi.create')}}" class="btn btn-primary">Tambah Sub Indikator</a>
+                        <a href="{{route('indikatorsteam.create')}}" class="btn btn-primary">Tambah Indikator</a>
+                        {{-- <code>.table</code> --}}
                       </div>
                     </div>
                   </div>
                   <div class="block-content">
-                    <table class="table table-vcenter" id="tablesubIndikator">
+                    <table class="table table-vcenter" id="tableIndikator">
                       <thead>
                         <tr>
                           <th class="text-center" style="width: 20px;">#</th>
-                          <th>Indikator</th>
                           <th>Nama</th>
                           <th style="width: 100px;">Actions</th>
                         </tr>
@@ -97,7 +97,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        var datatable = $('#tablesubIndikator').DataTable({
+        var datatable = $('#tableIndikator').DataTable({
             processing: true,
             serverSide: true,
             ordering: true,
@@ -106,7 +106,6 @@
             },
             columns: [
                 { data: 'number', name: 'number' },
-                { data: 'indikator_id', name: 'indikator_id' },
                 { data: 'nama', name: 'nama' },
                 {
                     data: 'aksi',
@@ -120,11 +119,11 @@
     </script>
     <script>
       $(document).on('click','.hapus', function () {
-          var $subindinama = $(this).attr('subindi-nama');
-          var $subindiid = $(this).attr('subindi-id');
+          var $indikatornama = $(this).attr('indikatorsteam-nama');
+          var $indikatorid = $(this).attr('indikatorsteam-id');
           swal({
             title: "Apakah Kamu Yakin",
-            text: "Data Sub Indikator "+$subindinama+" Akan Terhapus",
+            text: "Data Indikator "+$indikatornama+" Akan Terhapus",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -132,16 +131,16 @@
           .then((willDelete) => {
               console.log(willDelete);
             if (willDelete) {
-              window.location = "subindi/"+$subindiid+"/delete";
+              window.location = "indikatorsteam/"+$indikatorid+"/delete";
             } else {
-              swal("Data "+$subindinama+" Tidak Terhapus");
+              swal("Data "+$indikatornama+" Tidak Terhapus");
             }
           });
       })
     </script>
     <script>
         $(document).ready(function () {
-            $('#tablesubIndikator').DataTable();
+            $('#tableIndikator').DataTable();
         });
     </script>
 @endpush

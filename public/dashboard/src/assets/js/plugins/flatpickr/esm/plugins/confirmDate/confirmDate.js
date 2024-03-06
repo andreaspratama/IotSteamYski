@@ -66,3 +66,4 @@ function confirmDatePlugin(pluginConfig) {
     };
 }
 export default confirmDatePlugin;
+;

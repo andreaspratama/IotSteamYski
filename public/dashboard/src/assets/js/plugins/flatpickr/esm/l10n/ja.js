@@ -56,3 +56,4 @@ export var Japanese = {
 };
 fp.l10ns.ja = Japanese;
 export default fp.l10ns;
+;

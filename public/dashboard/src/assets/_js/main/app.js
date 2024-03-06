@@ -63,3 +63,4 @@ export default class App extends Template {
 
 // Create a new instance of App
 window.One = new App();
+;

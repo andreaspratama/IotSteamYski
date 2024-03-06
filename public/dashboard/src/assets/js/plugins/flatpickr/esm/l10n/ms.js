@@ -44,3 +44,4 @@ export var Malaysian = {
     },
 };
 export default fp.l10ns;
+;

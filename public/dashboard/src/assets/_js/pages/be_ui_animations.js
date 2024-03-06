@@ -43,3 +43,4 @@ class pageAnimations {
 
 // Initialize when page loads
 One.onLoad(() => pageAnimations.init());
+;

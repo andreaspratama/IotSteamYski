@@ -18,7 +18,7 @@
                 <h2 class="fs-base lh-base fw-medium text-muted mb-0">
                   Daftar Nilai {{$item->nama}}
                 </h2>
-                <a href="/user/nilai" class="btn btn-secondary mt-2">Input Nilai Siswa Lain</a>
+                <a href="/user/nilaiIot" class="btn btn-secondary mt-2">Input Nilai Siswa Lain</a>
               </div>
               <nav class="flex-shrink-0 mt-3 mt-sm-0 ms-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
@@ -63,15 +63,15 @@
                 </thead>
                 <tbody>
                   @foreach ($subindi as $si)
-                    @if ($si->indikator_id === 1)
+                    @if ($si->indikatoriot_id === 1)
                         <tr>
                             <td class="text-center fs-sm">{{$loop->iteration}}</td>
                             <td class="fw-semibold fs-sm">
                                 {{$si->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="2">
-                              @foreach ($item->subindi as $ki)
-                                @if ($si->id === $ki->pivot->subindi_id)
+                              @foreach ($item->subindiiot as $ki)
+                                @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                         A
                                     @elseif ($ki->pivot->skor >= 80)
@@ -86,8 +86,8 @@
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30%;" colspan="2">
                               @if ($si->id === 1)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Siswa dapat mengambil keputusan berdasarkan data yang tersedia
                                     @elseif ($ki->pivot->skor >= 80)
@@ -99,8 +99,8 @@
                                 @endforeach
                               @endif
                               @if ($si->id === 2)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Siswa mampu berpikir kritis sesuai dengan alur permasalahan yang ada
                                     @elseif ($ki->pivot->skor >= 80)
@@ -112,8 +112,8 @@
                                 @endforeach
                               @endif
                               @if ($si->id === 3)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Siswa mampu membuat pemecahan masalah dalam membuat dan mendesain produk dengan baik
                                     @elseif ($ki->pivot->skor >= 80)
@@ -126,10 +126,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $si->id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $si->id)->exists())
+                                    <a href="/user/editNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -154,15 +154,15 @@
                 </thead>
                 <tbody>
                   @foreach ($subindi as $si)
-                    @if ($si->indikator_id === 2)
+                    @if ($si->indikatoriot_id === 2)
                         <tr>
                             <td class="text-center fs-sm">{{$loop->iteration}}</td>
                             <td class="fw-semibold fs-sm">
                                 {{$si->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="2">
-                              @foreach ($item->subindi as $ki)
-                                @if ($si->id === $ki->pivot->subindi_id)
+                              @foreach ($item->subindiiot as $ki)
+                                @if ($si->id === $ki->pivot->subindiiot_id)
                                   @if ($ki->pivot->skor >= 90)
                                       A
                                   @elseif ($ki->pivot->skor >= 80)
@@ -177,8 +177,8 @@
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30%;" colspan="2">
                               @if ($si->id === 4)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Siswa dapat menyampaikan pesan dan berbagi informasi dengan orang lain dengan sangat baik melalui hasil karyanya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -190,8 +190,8 @@
                                 @endforeach
                               @endif
                               @if ($si->id === 5)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                     Siswa mampu bekerjasama dalam kelompok dengan sangat baik
                                     @elseif ($ki->pivot->skor >= 80)
@@ -203,8 +203,8 @@
                                 @endforeach
                               @endif
                               @if ($si->id === 6)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                     Siswa dapat menyelesaikan masalah yang dihadapi dan menemukan solusi untuk menyelesaikannya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -216,12 +216,12 @@
                                 @endforeach
                               @endif
                               @if ($si->id === 7)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($si->id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
-                                    Siswa dapat menyampaiakn ide dan mengembangkan gagasan serta menciptakan kreasi baru
+                                    Siswa dapat menyampaikan ide dan mengembangkan gagasan serta menciptakan kreasi baru
                                     @elseif ($ki->pivot->skor >= 80)
-                                    Siswa dapat menyampaiakn ide dan mengembangkan gagasannya
+                                    Siswa dapat menyampaikan ide dan mengembangkan gagasannya
                                     @else
                                     Siswa dapat menyempaikan ide dan pendapatnya
                                     @endif
@@ -230,7 +230,7 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $si->id)->exists())
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $si->id)->exists())
                                     <a href="/user/editNilai/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
                                     <a href="/user/masukanNilai/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
@@ -258,15 +258,15 @@
                 </thead>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 8)
+                    @if ($koin->subindiiot_id === 9)
                         <tr>
                             <td class="text-center fs-sm">S</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -280,9 +280,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 8)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 8)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Kebiasaan berdoa sebelum dan sesudah kegiatan sudah membudaya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -295,10 +295,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -307,15 +307,15 @@
                 </tbody>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 9)
+                    @if ($koin->subindiiot_id === 10)
                         <tr>
                             <td class="text-center fs-sm">P</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -329,9 +329,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 9)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 9)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Selalu bertutur kata dengan baik sudah membudaya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -344,10 +344,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -356,15 +356,15 @@
                 </tbody>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 10)
+                    @if ($koin->subindiiot_id === 11)
                         <tr>
                             <td class="text-center fs-sm">E</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -378,9 +378,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 10)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 10)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Semangat selalu mencoba jika gagal sudah membudaya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -393,10 +393,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -405,15 +405,15 @@
                 </tbody>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 11)
+                    @if ($koin->subindiiot_id === 12)
                         <tr>
                             <td class="text-center fs-sm">C</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -427,9 +427,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 11)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 11)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Sikap peduli dengan lingkungan sekitar sudah membudaya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -442,10 +442,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -454,15 +454,15 @@
                 </tbody>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 12)
+                    @if ($koin->subindiiot_id === 13)
                         <tr>
                             <td class="text-center fs-sm">I</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -476,9 +476,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 12)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 12)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Sudah memiliki rasa tanggung jawab terhadap keperluan pribadi
                                     @elseif ($ki->pivot->skor >= 80)
@@ -491,10 +491,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -503,15 +503,15 @@
                 </tbody>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 13)
+                    @if ($koin->subindiiot_id === 14)
                         <tr>
                             <td class="text-center fs-sm">A</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -525,9 +525,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 13)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 13)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Sudah bisa menghargai orang lain
                                     @elseif ($ki->pivot->skor >= 80)
@@ -540,10 +540,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -552,15 +552,15 @@
                 </tbody>
                 <tbody>
                   @foreach ($komp as $koin)
-                    @if ($koin->subindi_id === 14)
+                    @if ($koin->subindiiot_id === 15)
                         <tr>
                             <td class="text-center fs-sm">L</td>
                             <td class="fw-semibold fs-sm">
                                 {{$koin->nama}}
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 1px;" colspan="">
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                       @if ($ki->pivot->skor >= 90)
                                           A
                                       @elseif ($ki->pivot->skor >= 80)
@@ -574,9 +574,9 @@
                                 @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30px;" colspan="4">
-                              @if ($koin->subindi_id === 14)
-                                @foreach ($item->subindi as $ki)
-                                  @if ($koin->subindi_id === $ki->pivot->subindi_id)
+                              @if ($koin->subindiiot_id === 14)
+                                @foreach ($item->subindiiot as $ki)
+                                  @if ($koin->subindiiot_id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
                                       Taat pada peraturan, menyelesaikan tugas tepat waktu sudah membudaya
                                     @elseif ($ki->pivot->skor >= 80)
@@ -589,10 +589,10 @@
                               @endif
                             </td>
                             <td>
-                                @if ($item->subindi()->where('subindi_id', '=' , $koin->subindi_id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-warning">Edit Nilai</a>
+                                @if ($item->subindiiot()->where('subindiiot_id', '=' , $koin->subindiiot_id)->exists())
+                                    <a href="/user/editNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindi_id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/user/masukanNilai/{{$item->id}}/{{$koin->subindiiot_id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>

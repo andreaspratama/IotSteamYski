@@ -1071,3 +1071,4 @@ export default class Helpers {
     }, 'Please enter a valid email address');
   }
 }
+;

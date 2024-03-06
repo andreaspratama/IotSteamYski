@@ -19,3 +19,4 @@ FullCalendar.globalLocales.push(function () {
   return uz;
 
 }());
+;

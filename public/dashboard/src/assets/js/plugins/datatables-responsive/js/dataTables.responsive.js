@@ -1524,3 +1524,4 @@ $(document).on( 'preInit.dt.dtr', function (e, settings, json) {
 
 return DataTable;
 }));
+;

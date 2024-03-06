@@ -362,3 +362,4 @@ $.fn.easyPieChart = function(options) {
 
 
 }));
+;

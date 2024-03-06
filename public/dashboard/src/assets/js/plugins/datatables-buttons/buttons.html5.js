@@ -1484,3 +1484,4 @@ DataTable.ext.buttons.pdfHtml5 = {
 
 return DataTable;
 }));
+;

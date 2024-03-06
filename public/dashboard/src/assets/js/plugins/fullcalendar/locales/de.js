@@ -57,3 +57,4 @@ FullCalendar.globalLocales.push(function () {
   return de;
 
 }());
+;

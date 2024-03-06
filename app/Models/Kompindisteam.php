@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kompindi extends Model
+class Kompindisteam extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function subindi()
+    public function subindisteam()
     {
-        return $this->belongsTo(Indikator::class);
+        return $this->belongsTo(Subindisteam::class);
     }
 
     public function siswa()

@@ -11,8 +11,8 @@ class Siswa extends Model
 
     protected $guarded = [];
 
-    public function subindi()
+    public function subindiiot()
     {
-        return $this->belongsToMany(Subindi::class)->withPivot(['skor', 'deskripsi']);
+        return $this->belongsToMany(Subindiiot::class)->withPivot(['skor', 'deskripsi']);
     }
 }

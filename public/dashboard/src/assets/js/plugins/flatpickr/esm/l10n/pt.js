@@ -51,3 +51,4 @@ export var Portuguese = {
 };
 fp.l10ns.pt = Portuguese;
 export default fp.l10ns;
+;

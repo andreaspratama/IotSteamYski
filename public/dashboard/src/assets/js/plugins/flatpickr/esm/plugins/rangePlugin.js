@@ -152,3 +152,4 @@ function rangePlugin(config) {
     };
 }
 export default rangePlugin;
+;

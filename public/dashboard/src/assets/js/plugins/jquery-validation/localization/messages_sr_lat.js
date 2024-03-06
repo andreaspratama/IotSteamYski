@@ -33,4 +33,4 @@ $.extend( $.validator.messages, {
 	step: $.validator.format( "Unesite vrednost koja je umnožak broja {0}." )
 } );
 return $;
-}));
+}));;

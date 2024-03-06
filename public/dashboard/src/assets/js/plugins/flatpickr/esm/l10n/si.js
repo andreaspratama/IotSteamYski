@@ -50,3 +50,4 @@ export var Sinhala = {
 };
 fp.l10ns.si = Sinhala;
 export default fp.l10ns;
+;

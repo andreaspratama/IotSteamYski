@@ -3251,3 +3251,4 @@ var Cropper = /*#__PURE__*/function () {
 assign(Cropper.prototype, render, preview, events, handlers, change, methods);
 
 module.exports = Cropper;
+;

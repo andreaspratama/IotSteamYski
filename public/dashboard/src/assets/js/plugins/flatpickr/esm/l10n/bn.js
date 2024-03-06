@@ -49,3 +49,4 @@ export var Bangla = {
 };
 fp.l10ns.bn = Bangla;
 export default fp.l10ns;
+;

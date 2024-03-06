@@ -63,3 +63,4 @@ export var Armenian = {
 };
 fp.l10ns.hy = Armenian;
 export default fp.l10ns;
+;

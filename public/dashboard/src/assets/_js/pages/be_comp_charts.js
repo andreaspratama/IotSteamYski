@@ -142,3 +142,4 @@ class pageCompCharts {
 
 // Initialize when page loads
 One.onLoad(() => pageCompCharts.init());
+;

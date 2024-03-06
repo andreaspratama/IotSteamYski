@@ -96,3 +96,4 @@ DataTable.ext.buttons.collection.rightAlignClassName = 'dropdown-menu-right';
 
 return DataTable;
 }));
+;

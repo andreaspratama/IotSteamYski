@@ -69,3 +69,4 @@ export var Catalan = {
 };
 fp.l10ns.cat = fp.l10ns.ca = Catalan;
 export default fp.l10ns;
+;

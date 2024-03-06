@@ -61,3 +61,4 @@ export var Kurdish = {
 };
 fp.l10ns.ckb = Kurdish;
 export default fp.l10ns;
+;

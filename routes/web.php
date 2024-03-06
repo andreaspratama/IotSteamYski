@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\GuruController;
-use App\Http\Controllers\Admin\IndikatorController;
-use App\Http\Controllers\Admin\SubindiController;
-use App\Http\Controllers\Admin\NkopetenController;
+use App\Http\Controllers\Admin\IndikatoriotController;
+use App\Http\Controllers\Admin\SubindiiotController;
+use App\Http\Controllers\Admin\NkopeteniotController;
+use App\Http\Controllers\Admin\IndikatorsteamController;
+use App\Http\Controllers\Admin\SubindisteamController;
+use App\Http\Controllers\Admin\NkopetensteamController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NilaiController;
 
@@ -38,16 +41,29 @@ Route::group(['middleware' => ['auth', 'login:ADMIN']], function(){
             Route::get('/guru/{id}/delete', [GuruController::class, 'del'])->name('delete');
             Route::resource('guru', GuruController::class);
 
-            // Indikator
-            Route::get('/indikator/{id}/delete', [IndikatorController::class, 'del'])->name('delete');
-            Route::resource('indikator', IndikatorController::class);
+            // IOT
+            // Indikator IoT
+            Route::get('/indikatoriot/{id}/delete', [IndikatoriotController::class, 'del'])->name('delete');
+            Route::resource('indikatoriot', IndikatoriotController::class);
 
-            // Sub Indikator
-            Route::get('/subindi/{id}/delete', [SubindiController::class, 'del'])->name('delete');
-            Route::resource('subindi', SubindiController::class);
+            // Sub Indikator IoT
+            Route::get('/subindiiot/{id}/delete', [SubindiiotController::class, 'del'])->name('delete');
+            Route::resource('subindiiot', SubindiiotController::class);
 
-            // Kompetensi Indikator
-            Route::resource('nkopeten', NkopetenController::class);
+            // Kompetensi Indikator IoT
+            Route::resource('nkopeteniot', NkopeteniotController::class);
+
+            // STEAM
+            // Indikator Steam
+            Route::get('/indikatorsteam/{id}/delete', [IndikatorsteamController::class, 'del'])->name('delete');
+            Route::resource('indikatorsteam', IndikatorsteamController::class);
+
+            // Sub Indikator Steam
+            Route::get('/subindisteam/{id}/delete', [SubindisteamController::class, 'del'])->name('delete');
+            Route::resource('subindisteam', SubindisteamController::class);
+
+            // Kompetensi Indikator Steam
+            Route::resource('nkopetensteam', NkopetensteamController::class);
 
             // User
             Route::resource('user', UserController::class);
@@ -60,13 +76,13 @@ Route::group(['middleware' => ['auth', 'login:USER']], function(){
         ->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboardUser');
 
-            // Nilai
-            Route::get('/nilai', [NilaiController::class, 'nilai'])->name('nilai'); //List daftar nilai siswa
-            Route::get('/siswaNilai/{id}', [NilaiController::class, 'siswaNilai'])->name('siswaNilai'); //Daftar nilai anak
-            Route::get('/masukanNilai/{id}/{idkomp}', [NilaiController::class, 'masukanNilai'])->name('masukanNilai'); //Memasukan nilai anak
-            Route::post('/masukanNilaiStore/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiStore'])->name('masukanNilaiStore'); //Proses masuk nilai
-            Route::get('/editNilai/{id}/{idkomp}', [NilaiController::class, 'editNilai'])->name('editNilai'); //Edit nilai anak
-            Route::post('/masukanNilaiUpdate/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiUpdate'])->name('masukanNilaiUpdate'); //Proses edit nilai
+            // Nilai IOT
+            Route::get('/nilaiIot', [NilaiController::class, 'nilaiIot'])->name('nilaiIot'); //List daftar nilai siswa
+            Route::get('/siswaNilaiIot/{id}', [NilaiController::class, 'siswaNilaiIot'])->name('siswaNilaiIot'); //Daftar nilai anak
+            Route::get('/masukanNilaiIot/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiIot'])->name('masukanNilaiIot'); //Memasukan nilai anak
+            Route::post('/masukanNilaiStoreIot/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiStoreIot'])->name('masukanNilaiStoreIot'); //Proses masuk nilai
+            Route::get('/editNilaiIot/{id}/{idkomp}', [NilaiController::class, 'editNilaiIot'])->name('editNilaiIot'); //Edit nilai anak
+            Route::post('/masukanNilaiUpdateIot/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiUpdateIot'])->name('masukanNilaiUpdateIot'); //Proses edit nilai
 
             // Download Nilai
             Route::get('/downloadNilai/{id}', [NilaiController::class, 'downloadNilai'])->name('downloadNilai'); //Download Nilai

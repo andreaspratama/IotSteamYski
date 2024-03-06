@@ -122,3 +122,4 @@ class pageFormsValidation {
 
 // Initialize when page loads
 One.onLoad(() => pageFormsValidation.init());
+;

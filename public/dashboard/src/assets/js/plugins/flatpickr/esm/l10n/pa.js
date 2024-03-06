@@ -50,3 +50,4 @@ export var Punjabi = {
 };
 fp.l10ns.pa = Punjabi;
 export default fp.l10ns;
+;

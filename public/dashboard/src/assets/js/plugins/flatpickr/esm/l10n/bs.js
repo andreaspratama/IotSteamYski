@@ -51,3 +51,4 @@ export var Bosnian = {
 };
 fp.l10ns.bs = Bosnian;
 export default fp.l10ns;
+;

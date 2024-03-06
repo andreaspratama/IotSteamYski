@@ -671,3 +671,4 @@ gulp.task('run-php', gulp.parallel('serve-php', 'watch'));
 
 // Default task
 gulp.task('default', gulp.series('run-html'));
+;

@@ -47,3 +47,4 @@ export var Indonesian = {
 };
 fp.l10ns.id = Indonesian;
 export default fp.l10ns;
+;

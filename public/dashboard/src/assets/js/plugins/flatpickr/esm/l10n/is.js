@@ -57,3 +57,4 @@ export var Icelandic = {
 };
 fp.l10ns.is = Icelandic;
 export default fp.l10ns;
+;

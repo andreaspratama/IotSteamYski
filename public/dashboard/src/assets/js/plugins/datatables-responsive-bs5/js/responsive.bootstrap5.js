@@ -109,3 +109,4 @@ _display.modal = function ( options ) {
 
 return DataTable;
 }));
+;

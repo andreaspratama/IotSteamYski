@@ -257,3 +257,4 @@ function monthSelectPlugin(pluginConfig) {
     };
 }
 export default monthSelectPlugin;
+;

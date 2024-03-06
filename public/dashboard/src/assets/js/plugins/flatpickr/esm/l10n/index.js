@@ -140,3 +140,4 @@ var l10n = {
     uz_latn: uzLatn,
 };
 export default l10n;
+;

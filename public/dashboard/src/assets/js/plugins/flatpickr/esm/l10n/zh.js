@@ -53,3 +53,4 @@ export var Mandarin = {
 };
 fp.l10ns.zh = Mandarin;
 export default fp.l10ns;
+;

@@ -15,3 +15,4 @@ export function debounce(fn, wait) {
 export var arrayify = function (obj) {
     return obj instanceof Array ? obj : [obj];
 };
+;

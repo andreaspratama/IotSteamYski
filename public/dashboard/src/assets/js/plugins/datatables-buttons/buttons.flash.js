@@ -1439,3 +1439,4 @@ DataTable.ext.buttons.pdfFlash = $.extend( {}, flashButton, {
 
 return DataTable.Buttons;
 }));
+;

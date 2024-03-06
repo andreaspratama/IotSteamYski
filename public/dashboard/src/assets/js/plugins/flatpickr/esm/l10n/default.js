@@ -70,3 +70,4 @@ export var english = {
     time_24hr: false,
 };
 export default english;
+;

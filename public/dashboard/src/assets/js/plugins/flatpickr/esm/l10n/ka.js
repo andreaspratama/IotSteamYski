@@ -60,3 +60,4 @@ export var Georgian = {
 };
 fp.l10ns.ka = Georgian;
 export default fp.l10ns;
+;

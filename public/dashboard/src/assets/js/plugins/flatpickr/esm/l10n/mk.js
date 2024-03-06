@@ -53,3 +53,4 @@ export var Macedonian = {
 };
 fp.l10ns.mk = Macedonian;
 export default fp.l10ns;
+;

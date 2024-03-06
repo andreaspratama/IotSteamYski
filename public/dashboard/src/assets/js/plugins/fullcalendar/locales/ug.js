@@ -15,3 +15,4 @@ FullCalendar.globalLocales.push(function () {
   return ug;
 
 }());
+;

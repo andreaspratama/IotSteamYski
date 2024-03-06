@@ -60,3 +60,4 @@ export var UzbekLatin = {
 };
 fp.l10ns["uz_latn"] = UzbekLatin;
 export default fp.l10ns;
+;

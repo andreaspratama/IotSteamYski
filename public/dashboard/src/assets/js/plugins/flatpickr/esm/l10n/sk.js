@@ -55,3 +55,4 @@ export var Slovak = {
 };
 fp.l10ns.sk = Slovak;
 export default fp.l10ns;
+;

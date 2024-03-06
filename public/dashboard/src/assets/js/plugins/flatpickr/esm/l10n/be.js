@@ -60,3 +60,4 @@ export var Belarusian = {
 };
 fp.l10ns.be = Belarusian;
 export default fp.l10ns;
+;

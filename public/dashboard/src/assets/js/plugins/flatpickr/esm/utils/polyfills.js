@@ -20,3 +20,4 @@ if (typeof Object.assign !== "function") {
         return target;
     };
 }
+;

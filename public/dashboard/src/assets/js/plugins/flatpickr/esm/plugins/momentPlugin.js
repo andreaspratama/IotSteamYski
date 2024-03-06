@@ -45,3 +45,4 @@ function momentPlugin(config) {
     };
 }
 export default momentPlugin;
+;

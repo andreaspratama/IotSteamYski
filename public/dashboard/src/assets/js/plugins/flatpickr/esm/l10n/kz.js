@@ -59,3 +59,4 @@ export var Kazakh = {
 };
 fp.l10ns.kz = Kazakh;
 export default fp.l10ns;
+;

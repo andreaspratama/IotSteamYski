@@ -55,3 +55,4 @@ export var Spanish = {
 };
 fp.l10ns.es = Spanish;
 export default fp.l10ns;
+;

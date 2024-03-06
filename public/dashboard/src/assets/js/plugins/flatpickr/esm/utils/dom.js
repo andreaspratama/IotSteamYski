@@ -52,3 +52,4 @@ export function getEventTarget(event) {
         return event.target;
     }
 }
+;

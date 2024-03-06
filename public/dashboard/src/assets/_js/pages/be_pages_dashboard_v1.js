@@ -163,3 +163,4 @@ class pageDashboardv1 {
 
 // Initialize when page loads
 One.onLoad(() => pageDashboardv1.init());
+;

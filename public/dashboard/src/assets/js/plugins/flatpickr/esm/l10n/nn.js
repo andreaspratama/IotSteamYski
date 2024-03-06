@@ -58,3 +58,4 @@ export var NorwegianNynorsk = {
 };
 fp.l10ns.nn = NorwegianNynorsk;
 export default fp.l10ns;
+;

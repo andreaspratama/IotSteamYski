@@ -75,3 +75,4 @@ function minMaxTimePlugin(config) {
     };
 }
 export default minMaxTimePlugin;
+;

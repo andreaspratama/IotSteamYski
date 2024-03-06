@@ -47,3 +47,4 @@ export var Arabic = {
 };
 fp.l10ns.ar = Arabic;
 export default fp.l10ns;
+;

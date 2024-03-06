@@ -2181,4 +2181,4 @@ class pageIcons {
 }
 
 // Initialize when page loads
-One.onLoad(() => pageIcons.init());
+One.onLoad(() => pageIcons.init());;

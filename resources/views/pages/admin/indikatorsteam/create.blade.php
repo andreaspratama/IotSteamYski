@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Edit Indikator
+    Create Indikator Steam
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2">
               <div class="flex-grow-1">
                 <h1 class="h3 fw-bold mb-2">
-                  Edit Indikator {{$item->nama}}
+                  Create Indikator Steam
                 </h1>
                 {{-- <h2 class="fs-base lh-base fw-medium text-muted mb-0">
                   Carefully designed elements that will ensure a great experience for your users.
@@ -54,13 +54,12 @@
               <h3 class="block-title">Indikator</h3>
             </div>
             <div class="block-content block-content-full">
-              <form action="{{route('indikator.update', $item->id)}}" method="POST">
+              <form action="{{route('indikatorsteam.store')}}" method="POST">
                 @csrf
-                @method('PUT')
                 <div class="row">
                   <div class="col-lg-12 col-xl-12">
                     <div class="form-floating mb-4">
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="John Doe" value="{{$item->nama}}">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" placeholder="John Doe" value="{{old('nama')}}">
                         <label for="nama">Nama</label>
                         @error('nama')
                             <div id="validationServer03Feedback" class="invalid-feedback">
@@ -74,7 +73,7 @@
                     <div class="col-lg-12">
                         <button class="btn btn-primary" type="submit">Submit</button>
                         <button class="btn btn-danger" type="reset">Reset</button>
-                        <a href="{{route('indikator.index')}}" class="btn btn-secondary">Batal</a>
+                        <a href="{{route('indikatorsteam.index')}}" class="btn btn-secondary">Batal</a>
                     </div>
                 </div>
               </form>

@@ -104,3 +104,4 @@ class pageDialogs {
 
 // Initialize when page loads
 One.onLoad(() => pageDialogs.init());
+;

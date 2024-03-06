@@ -60,3 +60,4 @@ export var Uzbek = {
 };
 fp.l10ns.uz = Uzbek;
 export default fp.l10ns;
+;

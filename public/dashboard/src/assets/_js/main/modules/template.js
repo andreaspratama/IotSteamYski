@@ -756,3 +756,4 @@ export default class Template {
     this.onLoad(() => Helpers.run(helpers, options));
   }
 }
+;

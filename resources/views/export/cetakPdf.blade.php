@@ -36,22 +36,22 @@
                     <br>
                     SD Kristen 2 YSKI
                     <br>
-                    Jl Dokter Cipto No.109
+                    Jl. dr. Cipto No.109 Semarang
                 </span>
             </td>
         </tr>
     </table>
 
-    <hr class="line-title" style="margin-top: 15px">
+    <hr class="line-title" style="margin-top: 10px">
 
-    <table style="margin-top: 0px; width: 60%; position:absolute;">
+    <table style="margin-top: -10px; width: 60%; position:absolute;">
       <tr>
           <td style="font-weight: bold; width:128px; font-size:14px">Nama Siswa</td>
           <td style="font-weight: bold; width:10px; font-size:14px">:</td>
           <td style="font-weight: bold; font-size:14px">{{$item->nama}}</td>
       </tr>
       <tr>
-          <td style="font-weight: bold; font-size:14px">Nomor Induk</td>
+          <td style="font-weight: bold; font-size:14px">NISN</td>
           <td style="font-weight: bold; font-size:14px">:</td>
           <td style="font-weight: bold; font-size:14px">{{$item->nisn}}</td>
       </tr>
@@ -69,30 +69,31 @@
       </tr>
     </table>
 
-    <h3 style="margin-top: 100px">PENGETAHUAN</h3>
-    <table class="table table-bordered table-striped table-vcenter js-dataTable-fulid="tableKetrampilan">
+    <!--<h3 style="margin-top: 100px">PENGETAHUAN</h3>-->
+    <table class="table table-bordered table-striped table-vcenter js-dataTable-fulid="tableKetrampilan" style="margin-top: 70px">
       <thead>
-                <tr style="background-color: #3366cc; color: #fff">
+                <tr style="background-color: #3366cc; color: #fff; font-size: 22px">
                   <th colspan="7" class="text-center">PENGETAHUAN</th>
                 </tr>
                 {{-- Komunikasi --}}
                 <tr>
-                  <th colspan="2" style="width: 10%" class="text-center"></th>
+                  <th colspan="" style="width: 10%" class="text-center">No</th>
+                  <th colspan="" style="width: 10%" class="text-center">Indikator</th>
                   <th class="text-center" colspan="1" style="width: 5%;">Skor</th>
                   <th class="text-center" colspan="4" style="width: 30%;">Deskripsi</th>
                 </tr>
       </thead>
       <tbody>
         @foreach ($subindi as $si)
-          @if ($si->indikator_id === 1)
-              <tr>
+          @if ($si->indikatoriot_id === 1)
+              <tr style="font-size: 15px">
                   <td class="text-center fs-sm" style="width: 1px">{{$loop->iteration}}</td>
                   <td class="fw-semibold fs-sm" style="width: 15px">
                       {{$si->nama}}
                   </td>
                   <td class="d-none d-sm-table-cell text-center" style="width: 15px;" colspan="1">
-                    @foreach ($item->subindi as $ki)
-                      @if ($si->id === $ki->pivot->subindi_id)
+                    @foreach ($item->subindiiot as $ki)
+                      @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                               A
                           @elseif ($ki->pivot->skor >= 80)
@@ -107,8 +108,8 @@
                   </td>
                   <td class="d-none d-sm-table-cell text-center" style="width: 30%;" colspan="4">
                     @if ($si->id === 1)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                             Siswa dapat mengambil keputusan berdasarkan data yang tersedia
                           @elseif ($ki->pivot->skor >= 80)
@@ -120,8 +121,8 @@
                       @endforeach
                     @endif
                     @if ($si->id === 2)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                             Siswa mampu berpikir kritis sesuai dengan alur permasalahan yang ada
                           @elseif ($ki->pivot->skor >= 80)
@@ -133,8 +134,8 @@
                       @endforeach
                     @endif
                     @if ($si->id === 3)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                             Siswa mampu membuat pemecahan masalah dalam membuat dan mendesain produk dengan baik
                           @elseif ($ki->pivot->skor >= 80)
@@ -151,30 +152,35 @@
         @endforeach
       </tbody>
     </table>
-    <h3 style="margin-top: 40px">KETRAMPILAN</h3>
-    <table class="table table-bordered table-striped table-vcenter js-dataTable-fulid="tableKetrampilan">
+    <!--<h3 style="margin-top: 40px">KETRAMPILAN</h3>-->
+    <?php
+        $i=0;
+        $nomor = $i++;
+    ?>
+    <table class="table table-bordered table-striped table-vcenter js-dataTable-fulid="tableKetrampilan" style="margin-top: 5px">
       <thead>
                 <tr style="background-color: #3366cc; color: #fff">
-                  <th colspan="7" class="text-center">KETRAMPILAN</th>
+                  <th colspan="7" class="text-center" style="font-size: 25px">KETRAMPILAN</th>
                 </tr>
                 {{-- Komunikasi --}}
                 <tr>
-                  <th colspan="2" style="width: 5%" class="text-center"></th>
+                  <th colspan="" style="width: 10%" class="text-center">No</th>
+                  <th colspan="" style="width: 10%" class="text-center">Indikator</th>
                   <th class="text-center" colspan="1" style="width: 5%;">Skor</th>
                   <th class="text-center" colspan="4" style="width: 30%;">Deskripsi</th>
                 </tr>
       </thead>
       <tbody>
         @foreach ($subindi as $si)
-          @if ($si->indikator_id === 2)
-              <tr>
+          @if ($si->indikatoriot_id === 2)
+              <tr style="font-size: 15px">
                   <td class="text-center fs-sm" style="width: 1px">{{$loop->iteration}}</td>
                   <td class="fw-semibold fs-sm" style="width: 15px">
                       {{$si->nama}}
                   </td>
                   <td class="d-none d-sm-table-cell text-center" style="width: 15px;" colspan="1">
-                    @foreach ($item->subindi as $ki)
-                      @if ($si->id === $ki->pivot->subindi_id)
+                    @foreach ($item->subindiiot as $ki)
+                      @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                               A
                           @elseif ($ki->pivot->skor >= 80)
@@ -189,8 +195,8 @@
                   </td>
                   <td class="d-none d-sm-table-cell text-center" style="width: 30%;" colspan="4">
                     @if ($si->id === 4)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                             Siswa dapat menyampaikan pesan dan berbagi informasi dengan orang lain dengan sangat baik melalui hasil karyanya
                           @elseif ($ki->pivot->skor >= 80)
@@ -202,8 +208,8 @@
                       @endforeach
                     @endif
                     @if ($si->id === 5)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                           Siswa mampu bekerjasama dalam kelompok dengan sangat baik
                           @elseif ($ki->pivot->skor >= 80)
@@ -215,8 +221,8 @@
                       @endforeach
                     @endif
                     @if ($si->id === 6)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
                           Siswa dapat menyelesaikan masalah yang dihadapi dan menemukan solusi untuk menyelesaikannya
                           @elseif ($ki->pivot->skor >= 80)
@@ -228,322 +234,14 @@
                       @endforeach
                     @endif
                     @if ($si->id === 7)
-                      @foreach ($item->subindi as $ki)
-                        @if ($si->id === $ki->pivot->subindi_id)
+                      @foreach ($item->subindiiot as $ki)
+                        @if ($si->id === $ki->pivot->subindiiot_id)
                           @if ($ki->pivot->skor >= 90)
-                          Siswa dapat menyampaiakn ide dan mengembangkan gagasan serta menciptakan kreasi baru
+                          Siswa dapat menyampaikan ide dan mengembangkan gagasan serta menciptakan kreasi baru
                           @elseif ($ki->pivot->skor >= 80)
-                          Siswa dapat menyampaiakn ide dan mengembangkan gagasannya
+                          Siswa dapat menyampaikan ide dan mengembangkan gagasannya
                           @else
                           Siswa dapat menyempaikan ide dan pendapatnya
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-    </table>
-    <h3 style="margin-top: 40px">KARAKTER</h3>
-    <table class="table table-bordered table-striped table-vcenter js-dataTable-fulid="tableKetrampilan">
-      <thead>
-                <tr style="background-color: #3366cc; color: #fff">
-                  <th colspan="7" class="text-center">KARAKTER</th>
-                </tr>
-                {{-- Komunikasi --}}
-                <tr>
-                  <th colspan="2" style="width: 10%" class="text-center"></th>
-                  <th class="text-center" colspan="1" style="width: 5%;">Skor</th>
-                  <th class="text-center" colspan="3" style="width: 30%;">Deskripsi</th>
-                </tr>
-      </thead>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 8)
-              <tr>
-                  <td class="text-center fs-sm" style="width: 1px">S</td>
-                  <td class="fw-semibold fs-sm"style="width: 10px">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15px;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 8)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Kebiasaan berdoa sebelum dan sesudah kegiatan sudah membudaya
-                          @elseif ($ki->pivot->skor >= 80)
-                            Kebiasaan berdoa sebelum dan sesudah kegiatan mulai membudaya
-                          @else
-                            Kebiasaan berdoa sebelum dan sesudah kegiatan belum membudaya
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 9)
-              <tr>
-                  <td class="text-center fs-sm">P</td>
-                  <td class="fw-semibold fs-sm">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 9)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Selalu bertutur kata dengan baik sudah membudaya
-                          @elseif ($ki->pivot->skor >= 80)
-                            Selalu bertutur kata dengan baik mulai membudaya
-                          @else
-                            Selalu bertutur kata dengan baik belum membudaya
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 10)
-              <tr>
-                  <td class="text-center fs-sm">E</td>
-                  <td class="fw-semibold fs-sm">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 10)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Semangat selalu mencoba jika gagal sudah membudaya
-                          @elseif ($ki->pivot->skor >= 80)
-                            Semangat selalu mencoba jika gagal mulai membudaya
-                          @else
-                            Semangat selalu mencoba jika gagal belum membudaya
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 11)
-              <tr>
-                  <td class="text-center fs-sm">C</td>
-                  <td class="fw-semibold fs-sm">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 11)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Sikap peduli dengan lingkungan sekitar sudah membudaya
-                          @elseif ($ki->pivot->skor >= 80)
-                            Sikap peduli dengan lingkungan sekitar mulai membudaya
-                          @else
-                            Sikap peduli dengan lingkungan sekitar belum membudaya
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 12)
-              <tr>
-                  <td class="text-center fs-sm">I</td>
-                  <td class="fw-semibold fs-sm">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 12)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Sudah memiliki rasa tanggung jawab terhadap keperluan pribadi
-                          @elseif ($ki->pivot->skor >= 80)
-                            Mulai memiliki rasa tanggung jawab terhadap keperluan pribadi
-                          @else
-                            Belum memiliki rasa tanggung jawab terhadap keperluan pribadi
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 13)
-              <tr>
-                  <td class="text-center fs-sm">A</td>
-                  <td class="fw-semibold fs-sm">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 13)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Sudah bisa menghargai orang lain
-                          @elseif ($ki->pivot->skor >= 80)
-                            Mulai bisa menghargai orang lain
-                          @else
-                            Belum bisa menghargai orang lain
-                          @endif
-                        @endif
-                      @endforeach
-                    @endif
-                  </td>
-              </tr>
-          @endif
-        @endforeach
-      </tbody>
-      <tbody>
-        @foreach ($komp as $koin)
-          @if ($koin->subindi_id === 14)
-              <tr>
-                  <td class="text-center fs-sm">L</td>
-                  <td class="fw-semibold fs-sm">
-                      {{$koin->nama}}
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;">
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                            @if ($ki->pivot->skor >= 90)
-                                A
-                            @elseif ($ki->pivot->skor >= 80)
-                                B
-                            @elseif ($ki->pivot->skor >= 70)
-                                C
-                            @else
-                                D
-                            @endif
-                        @endif
-                      @endforeach
-                  </td>
-                  <td class="d-none d-sm-table-cell text-center" style="width: 15%;" colspan="4">
-                    @if ($koin->subindi_id === 14)
-                      @foreach ($item->subindi as $ki)
-                        @if ($koin->subindi_id === $ki->pivot->subindi_id)
-                          @if ($ki->pivot->skor >= 90)
-                            Taat pada peraturan, menyelesaikan tugas tepat waktu sudah membudaya
-                          @elseif ($ki->pivot->skor >= 80)
-                            Taat pada peraturan, menyelesaikan tugas tepat waktu mulai membudaya
-                          @else
-                            Taat pada peraturan, menyelesaikan tugas tepat waktu belum membudaya
                           @endif
                         @endif
                       @endforeach
@@ -569,16 +267,17 @@
                       <br>
                       <br>
                       <br>
+                      <br>
                       .......................................
                   </td>
               </tr>
             </table>
             <table style="position: absolute; width: 100%; font-size:14px; margin-right: -350px">
                   <tr>
-                      <td style="padding-left: 580px">Wali Kelas</td>
+                      <td style="padding-left: 580px">Guru Pengampu</td>
                   </tr>
                   <tr>
-                      <td><img src="{{$foto}}" alt="" style="margin-top:10px; width: 80px; padding-left: 580px"></td>
+                      <td><img src="{{$foto}}" alt="" style="margin-top:0px; width: 80px; padding-left: 580px"></td>
                   </tr>
                   <tr>
                       <td align="right" style="padding-right: 0px">{{Auth::user()->name}}</td>

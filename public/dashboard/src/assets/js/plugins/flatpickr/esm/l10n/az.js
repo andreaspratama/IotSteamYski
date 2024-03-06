@@ -59,3 +59,4 @@ export var Azerbaijan = {
 };
 fp.l10ns.az = Azerbaijan;
 export default fp.l10ns;
+;

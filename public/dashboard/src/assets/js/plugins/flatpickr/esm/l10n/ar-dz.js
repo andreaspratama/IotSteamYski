@@ -46,3 +46,4 @@ export var AlgerianArabic = {
 };
 fp.l10ns.ar = AlgerianArabic;
 export default fp.l10ns;
+;

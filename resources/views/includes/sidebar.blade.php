@@ -152,16 +152,16 @@
                 <li class="nav-main-item">
                   <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                     <i class="nav-main-link-icon si si-folder"></i>
-                    <span class="nav-main-link-name">Data Master</span>
+                    <span class="nav-main-link-name">Data Master IoT</span>
                   </a>
                   <ul class="nav-main-submenu">
                     <li class="nav-main-item">
                       <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                        <span class="nav-main-link-name">Indikator</span>
+                        <span class="nav-main-link-name">Indikator IoT</span>
                       </a>
                       <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                          <a class="nav-main-link" href="{{route('indikator.index')}}">
+                          <a class="nav-main-link" href="{{route('indikatoriot.index')}}">
                             <span class="nav-main-link-name">List</span>
                           </a>
                         </li>
@@ -169,11 +169,11 @@
                     </li>
                     <li class="nav-main-item">
                       <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                        <span class="nav-main-link-name">Sub Indikator</span>
+                        <span class="nav-main-link-name">Sub Indikator IoT</span>
                       </a>
                       <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                          <a class="nav-main-link" href="{{route('subindi.index')}}">
+                          <a class="nav-main-link" href="{{route('subindiiot.index')}}">
                             <span class="nav-main-link-name">List</span>
                           </a>
                         </li>
@@ -181,11 +181,55 @@
                     </li>
                     <li class="nav-main-item">
                       <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                        <span class="nav-main-link-name">Sub Komp Indikator</span>
+                        <span class="nav-main-link-name">Sub Komp Indikator IoT</span>
                       </a>
                       <ul class="nav-main-submenu">
                         <li class="nav-main-item">
-                          <a class="nav-main-link" href="{{route('nkopeten.index')}}">
+                          <a class="nav-main-link" href="{{route('nkopeteniot.index')}}">
+                            <span class="nav-main-link-name">List</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-main-item">
+                  <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                    <i class="nav-main-link-icon si si-folder"></i>
+                    <span class="nav-main-link-name">Data Master Steam</span>
+                  </a>
+                  <ul class="nav-main-submenu">
+                    <li class="nav-main-item">
+                      <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <span class="nav-main-link-name">Indikator Steam</span>
+                      </a>
+                      <ul class="nav-main-submenu">
+                        <li class="nav-main-item">
+                          <a class="nav-main-link" href="{{route('indikatorsteam.index')}}">
+                            <span class="nav-main-link-name">List</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-main-item">
+                      <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <span class="nav-main-link-name">Sub Indikator Steam</span>
+                      </a>
+                      <ul class="nav-main-submenu">
+                        <li class="nav-main-item">
+                          <a class="nav-main-link" href="{{route('subindisteam.index')}}">
+                            <span class="nav-main-link-name">List</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-main-item">
+                      <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                        <span class="nav-main-link-name">Sub Komp Indikator Steam</span>
+                      </a>
+                      <ul class="nav-main-submenu">
+                        <li class="nav-main-item">
+                          <a class="nav-main-link" href="{{route('nkopetensteam.index')}}">
                             <span class="nav-main-link-name">List</span>
                           </a>
                         </li>
@@ -202,10 +246,15 @@
                   </a>
                   <ul class="nav-main-submenu">
                     <li class="nav-main-item">
-                      <a class="nav-main-link" href="{{route('nilai')}}">
-                        <span class="nav-main-link-name">Nilai</span>
+                      <a class="nav-main-link" href="{{route('nilaiIot')}}">
+                        <span class="nav-main-link-name">Nilai IoT</span>
                       </a>
                     </li>
+                    {{-- <li class="nav-main-item">
+                      <a class="nav-main-link" href="{{route('nilai')}}">
+                        <span class="nav-main-link-name">Nilai Steam</span>
+                      </a>
+                    </li> --}}
                   </ul>
                 </li>
               @endif

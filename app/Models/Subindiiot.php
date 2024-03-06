@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subindi extends Model
+class Subindiiot extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function indikator()
+    public function indikatoriot()
     {
-        return $this->belongsTo(Indikator::class);
+        return $this->belongsTo(Indikatoriot::class);
     }
 
     public function kompindi()

@@ -81,3 +81,4 @@ export var defaults = {
     weekNumbers: false,
     wrap: false,
 };
+;

@@ -43,3 +43,4 @@ FullCalendar.globalLocales.push(function () {
   return es;
 
 }());
+;

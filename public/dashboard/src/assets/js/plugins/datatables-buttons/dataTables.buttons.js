@@ -2523,3 +2523,4 @@ if ( DataTable.ext.features ) {
 
 return DataTable;
 }));
+;

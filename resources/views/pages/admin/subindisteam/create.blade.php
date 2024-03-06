@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Create Sub Indikator
+    Create Sub Indikator Steam
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2">
               <div class="flex-grow-1">
                 <h1 class="h3 fw-bold mb-2">
-                  Create Sub Indikator
+                  Create Sub Indikator Steam
                 </h1>
                 {{-- <h2 class="fs-base lh-base fw-medium text-muted mb-0">
                   Carefully designed elements that will ensure a great experience for your users.
@@ -54,7 +54,7 @@
               <h3 class="block-title">Sub Indikator</h3>
             </div>
             <div class="block-content block-content-full">
-              <form action="{{route('subindi.store')}}" method="POST">
+              <form action="{{route('subindisteam.store')}}" method="POST">
                 @csrf
                 <div class="row">
                   <div class="col-lg-12 col-xl-12">
@@ -68,13 +68,13 @@
                         @enderror
                     </div>
                     <div class="form-floating mb-4">
-                      <select class="form-select" id="indikator_id" name="indikator_id" aria-label="Floating label select example">
+                      <select class="form-select" id="indikatorsteam_id" name="indikatorsteam_id" aria-label="Floating label select example">
                         {{-- <option selected>Pilih Indikator</option> --}}
                         @foreach ($indi as $i)
                           <option value="{{$i->id}}">{{$i->nama}}</option>
                         @endforeach
                       </select>
-                      <label for="indikator_id">Indikator</label>
+                      <label for="indikatorsteam_id">Indikator</label>
                     </div>
                   </div>
                 </div>
@@ -82,7 +82,7 @@
                     <div class="col-lg-12">
                         <button class="btn btn-primary" type="submit">Submit</button>
                         <button class="btn btn-danger" type="reset">Reset</button>
-                        <a href="{{route('subindi.index')}}" class="btn btn-secondary">Batal</a>
+                        <a href="{{route('subindisteam.index')}}" class="btn btn-secondary">Batal</a>
                     </div>
                 </div>
               </form>

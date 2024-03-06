@@ -70,3 +70,4 @@ function scrollPlugin() {
     };
 }
 export default scrollPlugin;
+;

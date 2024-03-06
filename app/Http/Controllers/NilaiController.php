@@ -4,91 +4,72 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Siswa;
-use App\Models\Kompindi;
-use App\Models\Indikator;
-use App\Models\Subindi;
+use App\Models\Kompindiiot;
+use App\Models\Indikatoriot;
+use App\Models\Subindiiot;
 use Yajra\DataTables\Facades\DataTables;
 use Dompdf\Options;
 use PDF;
 
 class NilaiController extends Controller
 {
-    public function nilai()
+    public function nilaiIot()
     {
         $siswa = Siswa::all();
-        // if(request()->ajax())
-        // {
-        //     $query = Siswa::query();
-
-        //     return Datatables::of($query)
-        //         ->addColumn('aksi', function($item) {
-        //             return '
-        //                 <a href="' . route('siswaNilai', $item->id) . '" class="btn btn-success btn-sm">
-        //                     Nilai
-        //                 </a>
-        //             ';
-        //         })
-        //         ->addColumn('number', function($item) {
-        //             static $count = 0;
-        //             return ++$count;
-        //         })
-        //         ->rawColumns(['aksi', 'number'])
-        //         ->make();
-        // }
 
         return view('pages.user.nilai.list', compact('siswa'));
     }
 
-    public function siswaNilai($id)
+    public function siswaNilaiIot($id)
     {
         $item = Siswa::findOrFail($id);
-        $subindi = Subindi::all();
-        $komp = Kompindi::all();
+        $subindi = Subindiiot::all();
+        $komp = Kompindiiot::all();
 
         return view('pages.user.nilai.siswaNilai', compact('item', 'subindi', 'komp'));
     }
 
-    public function masukanNilai($id, $idsub)
+    public function masukanNilaiIot($id, $idsub)
     {
         $item = Siswa::findOrFail($id);
-        $sub = Subindi::findOrFail($idsub);
-        $komp = Kompindi::findOrFail(($idsub));
+        $sub = Subindiiot::findOrFail($idsub);
+        $komp = Kompindiiot::findOrFail(($idsub));
 
         return view('pages.user.nilai.masukanNilai', compact('item', 'sub', 'komp'));
     }
 
-    public function masukanNilaiStore(Request $request, $id, $idsub)
+    public function masukanNilaiStoreIot(Request $request, $id, $idsub)
     {
         $item = Siswa::findOrFail($id);
-        $sub = Subindi::findOrFail($idsub);
-        $item->subindi()->attach($sub, ['skor' => $request->skor]);
+        $sub = Subindiiot::findOrFail($idsub);
+        $item->subindiiot()->attach($sub, ['skor' => $request->skor]);
 
-        return redirect('/user/siswaNilai/'.$id.'')->with('success', 'Nilai Berhasil Dimasukan');;
+        return redirect('/user/siswaNilaiIot/'.$id.'')->with('success', 'Nilai Berhasil Dimasukan');;
     }
 
-    public function editNilai($id, $idsub)
+    public function editNilaiIot($id, $idsub)
     {
         $item = Siswa::findOrFail($id);
-        $nilai = $item->subindi()->findOrFail($idsub);
-        $sub = Subindi::findOrFail($idsub);
+        $nilai = $item->subindiiot()->findOrFail($idsub);
+        $sub = Subindiiot::findOrFail($idsub);
 
         return view('pages.user.nilai.editNilai', compact('item', 'nilai', 'sub'));
     }
 
-    public function masukanNilaiUpdate(Request $request, $id, $idsub)
+    public function masukanNilaiUpdateIot(Request $request, $id, $idsub)
     {
         $item = Siswa::findOrFail($id);
-        $sub = Subindi::findOrFail($idsub);
-        $item->subindi()->updateExistingPivot($sub, ['skor' => $request->skor]);
+        $sub = Subindiiot::findOrFail($idsub);
+        $item->subindiiot()->updateExistingPivot($sub, ['skor' => $request->skor]);
 
-        return redirect('/user/siswaNilai/'.$id.'')->with('success', 'Nilai Berhasil Diubah');
+        return redirect('/user/siswaNilaiIot/'.$id.'')->with('success', 'Nilai Berhasil Diubah');
     }
 
     public function downloadNilai(Request $request, $id)
     {
         $item = Siswa::findOrFail($id);
-        $komp = Kompindi::all();
-        $subindi = Subindi::all();
+        $komp = Kompindiiot::all();
+        $subindi = Subindiiot::all();
 
         $pdf = PDF::loadview('export.cetakPdf', compact('item', 'komp', 'subindi'));
 	    return $pdf->stream();

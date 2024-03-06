@@ -242,3 +242,4 @@ $.extend( DataTable.ext.buttons, {
 
 return DataTable;
 }));
+;

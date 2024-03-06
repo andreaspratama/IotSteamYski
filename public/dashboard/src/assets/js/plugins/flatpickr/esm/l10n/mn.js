@@ -44,3 +44,4 @@ export var Mongolian = {
 };
 fp.l10ns.mn = Mongolian;
 export default fp.l10ns;
+;

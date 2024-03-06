@@ -76,3 +76,4 @@ function weekSelectPlugin() {
     };
 }
 export default weekSelectPlugin;
+;

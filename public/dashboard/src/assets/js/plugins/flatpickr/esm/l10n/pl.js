@@ -58,3 +58,4 @@ export var Polish = {
 };
 fp.l10ns.pl = Polish;
 export default fp.l10ns;
+;

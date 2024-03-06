@@ -58,3 +58,4 @@ export var Hungarian = {
 };
 fp.l10ns.hu = Hungarian;
 export default fp.l10ns;
+;

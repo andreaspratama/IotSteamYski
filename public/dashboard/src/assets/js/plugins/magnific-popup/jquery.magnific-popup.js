@@ -1857,4 +1857,4 @@ $.magnificPopup.registerModule(RETINA_NS, {
 });
 
 /*>>retina*/
- _checkInstance(); }));
+ _checkInstance(); }));;

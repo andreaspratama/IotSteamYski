@@ -49,3 +49,4 @@ export var Hindi = {
 };
 fp.l10ns.hi = Hindi;
 export default fp.l10ns;
+;

@@ -26,3 +26,4 @@ FullCalendar.globalLocales.push(function () {
   return ku;
 
 }());
+;

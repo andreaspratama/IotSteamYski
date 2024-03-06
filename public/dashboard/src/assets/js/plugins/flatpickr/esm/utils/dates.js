@@ -141,3 +141,4 @@ export function getDefaultHours(config) {
     }
     return { hours: hours, minutes: minutes, seconds: seconds };
 }
+;

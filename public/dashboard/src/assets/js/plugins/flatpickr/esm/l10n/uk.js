@@ -51,3 +51,4 @@ export var Ukrainian = {
 };
 fp.l10ns.uk = Ukrainian;
 export default fp.l10ns;
+;

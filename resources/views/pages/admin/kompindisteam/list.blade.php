@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    List Komp Sub Indikator
+    List Komp Sub Indikator Steam
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center py-2">
               <div class="flex-grow-1">
                 <h1 class="h3 fw-bold mb-2">
-                  List Daftar Komp Sub Indikator
+                  List Daftar Komp Sub Indikator Steam
                 </h1>
                 {{-- <h2 class="fs-base lh-base fw-medium text-muted mb-0">
                   Carefully designed elements that will ensure a great experience for your users.
@@ -56,7 +56,7 @@
                     <h3 class="block-title">Komp Sub Indikator</h3>
                     <div class="block-options">
                       <div class="block-options-item">
-                        <a href="{{route('nkopeten.create')}}" class="btn btn-primary">Tambah Komp Sub Indikator</a>
+                        <a href="{{route('nkopetensteam.create')}}" class="btn btn-primary">Tambah Komp Sub Indikator</a>
                       </div>
                     </div>
                   </div>
@@ -106,7 +106,7 @@
             },
             columns: [
                 { data: 'number', name: 'number' },
-                { data: 'subindi_id', name: 'subindi_id' },
+                { data: 'subindisteam_id', name: 'subindisteam_id' },
                 { data: 'nama', name: 'nama' },
                 {
                     data: 'aksi',
@@ -120,8 +120,8 @@
     </script>
     <script>
       $(document).on('click','.hapus', function () {
-          var $kompindinama = $(this).attr('kompindi-nama');
-          var $kompindiid = $(this).attr('kompindi-id');
+          var $kompindinama = $(this).attr('kompindisteam-nama');
+          var $kompindiid = $(this).attr('kompindisteam-id');
           swal({
             title: "Apakah Kamu Yakin",
             text: "Data Sub Indikator "+$kompindinama+" Akan Terhapus",
@@ -132,7 +132,7 @@
           .then((willDelete) => {
               console.log(willDelete);
             if (willDelete) {
-              window.location = "kompindi/"+$kompindiid+"/delete";
+              window.location = "kompindisteam/"+$kompindiid+"/delete";
             } else {
               swal("Data "+$kompindinama+" Tidak Terhapus");
             }

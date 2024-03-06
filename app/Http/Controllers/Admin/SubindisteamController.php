@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Subindi;
-use App\Models\Kompindi;
-use App\Http\Requests\kompindiRequest;
+use App\Models\Indikatorsteam;
+use App\Models\Subindisteam;
+use App\Http\Requests\SubindisteamRequest;
 use Yajra\DataTables\Facades\DataTables;
 
-class NkopetenController extends Controller
+class SubindisteamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +20,15 @@ class NkopetenController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Kompindi::query();
+            $query = Subindisteam::query();
 
             return Datatables::of($query)
                 ->addColumn('aksi', function($item) {
                     return '
-                        <a href="' . route('nkopeten.edit', $item->id) . '" class="btn btn-warning btn-sm">
+                        <a href="' . route('subindisteam.edit', $item->id) . '" class="btn btn-warning btn-sm">
                             Edit
                         </a>
-                        <button class="btn btn-danger btn-sm hapus" kompindi-id="' . $item->id . '" kompindi-nama="' . $item->nama . '">
+                        <button class="btn btn-danger btn-sm hapus" subindisteam-id="' . $item->id . '" subindisteam-nama="' . $item->nama . '">
                             Delete
                         </button>
                     ';
@@ -37,14 +37,14 @@ class NkopetenController extends Controller
                     static $count = 0;
                     return ++$count;
                 })
-                ->editColumn('subindi_id', function($item) {
-                    return $item->subindi->nama;
+                ->editColumn('indikatorsteam_id', function($item) {
+                    return $item->indikatorsteam->nama;
                 })
-                ->rawColumns(['aksi', 'number', 'subindi_id'])
+                ->rawColumns(['aksi', 'number', 'indikatorsteam_id'])
                 ->make();
         }
 
-        return view('pages.admin.kompindi.list');
+        return view('pages.admin.subindisteam.list');
     }
 
     /**
@@ -54,9 +54,9 @@ class NkopetenController extends Controller
      */
     public function create()
     {
-        $subindi = Subindi::all();
+        $indi = Indikatorsteam::all();
 
-        return view('pages.admin.kompindi.create', compact('subindi'));
+        return view('pages.admin.subindisteam.create', compact('indi'));
     }
 
     /**
@@ -68,9 +68,9 @@ class NkopetenController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Kompindi::create($data);
+        Subindisteam::create($data);
 
-        return redirect()->route('nkopeten.index')->with('success', 'Data Berhasil Dimasukan');
+        return redirect()->route('subindisteam.index')->with('success', 'Data Berhasil Dimasukan');
     }
 
     /**
@@ -92,7 +92,10 @@ class NkopetenController extends Controller
      */
     public function edit($id)
     {
-        //
+        $si = Subindisteam::findOrFail($id);
+        $indi = Indikatoriot::all();
+
+        return view('pages.admin.subindiiot.edit', compact('si', 'indi'));
     }
 
     /**
@@ -104,7 +107,11 @@ class NkopetenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $item = Subindisteam::findOrFail($id);
+        $item->update($data);
+
+        return redirect()->route('subindiiot.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -116,5 +123,13 @@ class NkopetenController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function del($id)
+    {
+        $item = Subindisteam::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('subindiiot.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

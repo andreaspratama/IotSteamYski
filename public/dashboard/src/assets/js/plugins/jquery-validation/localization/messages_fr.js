@@ -61,4 +61,4 @@ $.extend( $.validator.messages, {
 	pattern: "Format non valide."
 } );
 return $;
-}));
+}));;

@@ -57,3 +57,4 @@ export var Thai = {
 };
 fp.l10ns.th = Thai;
 export default fp.l10ns;
+;

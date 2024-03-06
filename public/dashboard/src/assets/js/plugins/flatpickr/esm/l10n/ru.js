@@ -60,3 +60,4 @@ export var Russian = {
 };
 fp.l10ns.ru = Russian;
 export default fp.l10ns;
+;

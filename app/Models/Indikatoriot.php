@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Indikator extends Model
+class Indikatoriot extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
-    public function subindi()
+    public function subindiiot()
     {
-        return $this->hasMany(Subindi::class);
+        return $this->hasMany(Subindiiot::class);
     }
 }

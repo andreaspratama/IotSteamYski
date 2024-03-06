@@ -54,3 +54,4 @@ export var Korean = {
 };
 fp.l10ns.ko = Korean;
 export default fp.l10ns;
+;

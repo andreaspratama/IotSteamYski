@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Indikator;
-use App\Models\Subindi;
-use App\Http\Requests\SubindiRequest;
+use App\Models\Indikatoriot;
+use App\Http\Requests\IndikatorRequest;
 use Yajra\DataTables\Facades\DataTables;
 
-class SubindiController extends Controller
+class IndikatoriotController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,15 +19,15 @@ class SubindiController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Subindi::query();
+            $query = Indikatoriot::query();
 
             return Datatables::of($query)
                 ->addColumn('aksi', function($item) {
                     return '
-                        <a href="' . route('subindi.edit', $item->id) . '" class="btn btn-warning btn-sm">
+                        <a href="' . route('indikatoriot.edit', $item->id) . '" class="btn btn-warning btn-sm">
                             Edit
                         </a>
-                        <button class="btn btn-danger btn-sm hapus" subindi-id="' . $item->id . '" subindi-nama="' . $item->nama . '">
+                        <button class="btn btn-danger btn-sm hapus" indikatoriot-id="' . $item->id . '" indikatoriot-nama="' . $item->nama . '">
                             Delete
                         </button>
                     ';
@@ -37,14 +36,11 @@ class SubindiController extends Controller
                     static $count = 0;
                     return ++$count;
                 })
-                ->editColumn('indikator_id', function($item) {
-                    return $item->indikator->nama;
-                })
-                ->rawColumns(['aksi', 'number', 'indikator_id'])
+                ->rawColumns(['aksi', 'number'])
                 ->make();
         }
 
-        return view('pages.admin.subindi.list');
+        return view('pages.admin.indikatoriot.list');
     }
 
     /**
@@ -54,9 +50,7 @@ class SubindiController extends Controller
      */
     public function create()
     {
-        $indi = Indikator::all();
-
-        return view('pages.admin.subindi.create', compact('indi'));
+        return view('pages.admin.indikatoriot.create');
     }
 
     /**
@@ -65,12 +59,12 @@ class SubindiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(SubindiRequest $request)
+    public function store(Request $request)
     {
         $data = $request->all();
-        Subindi::create($data);
+        Indikatoriot::create($data);
 
-        return redirect()->route('subindi.index')->with('success', 'Data Berhasil Dimasukan');
+        return redirect()->route('indikatoriot.index')->with('success', 'Data Berhasil Dimasukan');
     }
 
     /**
@@ -92,10 +86,9 @@ class SubindiController extends Controller
      */
     public function edit($id)
     {
-        $si = Subindi::findOrFail($id);
-        $indi = Indikator::all();
+        $item = Indikatoriot::findOrFail($id);
 
-        return view('pages.admin.subindi.edit', compact('si', 'indi'));
+        return view('pages.admin.indikatoriot.edit', compact('item'));
     }
 
     /**
@@ -108,10 +101,10 @@ class SubindiController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $item = Subindi::findOrFail($id);
+        $item = Indikatoriot::findOrFail($id);
         $item->update($data);
 
-        return redirect()->route('subindi.index')->with('success', 'Data Berhasil Diubah');
+        return redirect()->route('indikatoriot.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
@@ -127,9 +120,9 @@ class SubindiController extends Controller
 
     public function del($id)
     {
-        $item = Subindi::findOrFail($id);
+        $item = Indikatoriot::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('subindi.index')->with('success', 'Data Berhasil Dihapus');
+        return redirect()->route('indikatoriot.index')->with('success', 'Data Berhasil Dihapus');
     }
 }

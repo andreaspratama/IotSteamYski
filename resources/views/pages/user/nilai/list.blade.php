@@ -79,7 +79,7 @@
                                 <td>{{$si->nama}}</td>
                                 <td>{{$si->kelas}}</td>
                                 <td>
-                                  <a href="{{route('siswaNilai', $si->id)}}" class="btn btn-primary">Nilai</a>
+                                  <a href="{{route('siswaNilaiIot', $si->id)}}" class="btn btn-primary">Nilai</a>
                                 </td>
                               </tr>
                             @elseif (Auth::user()->guru->nama === 'Yuni')
@@ -88,7 +88,7 @@
                                 <td>{{$si->nama}}</td>
                                 <td>{{$si->kelas}}</td>
                                 <td>
-                                  <a href="{{route('siswaNilai', $si->id)}}" class="btn btn-primary disable">Nilai</a>
+                                  <a href="{{route('siswaNilaiIot', $si->id)}}" class="btn btn-primary disable">Nilai</a>
                                 </td>
                               </tr>
                             @endif

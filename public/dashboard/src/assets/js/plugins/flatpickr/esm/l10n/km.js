@@ -59,3 +59,4 @@ export var Khmer = {
 };
 fp.l10ns.km = Khmer;
 export default fp.l10ns;
+;

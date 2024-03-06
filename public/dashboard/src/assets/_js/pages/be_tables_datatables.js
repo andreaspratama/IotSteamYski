@@ -99,3 +99,4 @@ class pageTablesDatatables {
 
 // Initialize when page loads
 One.onLoad(() => pageTablesDatatables.init());
+;

@@ -55,3 +55,4 @@ export var Slovenian = {
 };
 fp.l10ns.sl = Slovenian;
 export default fp.l10ns;
+;

@@ -52,3 +52,4 @@ export var Latvian = {
 };
 fp.l10ns.lv = Latvian;
 export default fp.l10ns;
+;

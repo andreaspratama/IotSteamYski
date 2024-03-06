@@ -58,3 +58,4 @@ export var Norwegian = {
 };
 fp.l10ns.no = Norwegian;
 export default fp.l10ns;
+;

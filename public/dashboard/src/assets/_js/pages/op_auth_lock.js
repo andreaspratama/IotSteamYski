@@ -40,3 +40,4 @@ class pageAuthLock {
 
 // Initialize when page loads
 One.onLoad(() => pageAuthLock.init());
+;
