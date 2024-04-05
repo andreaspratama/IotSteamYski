@@ -16,9 +16,9 @@ class Subindisteam extends Model
         return $this->belongsTo(Indikatorsteam::class);
     }
 
-    public function kompindi()
+    public function kompindisteam()
     {
-        return $this->hasMany(Kompindi::class);
+        return $this->hasMany(Kompindisteam::class);
     }
 
     public function siswa()

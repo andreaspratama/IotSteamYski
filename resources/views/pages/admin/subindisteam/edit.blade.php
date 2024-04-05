@@ -54,7 +54,7 @@
               <h3 class="block-title">Sub Indikator</h3>
             </div>
             <div class="block-content block-content-full">
-              <form action="{{route('subindiiot.update', $si->id)}}" method="POST">
+              <form action="{{route('subindisteam.update', $si->id)}}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -69,13 +69,13 @@
                         @enderror
                     </div>
                     <div class="form-floating mb-4">
-                      <select class="form-select" id="indikatoriot_id" name="indikatoriot_id" aria-label="Floating label select example">
-                        <option value="{{$si->indikatoriot_id}}">{{$si->indikatoriot->nama}}</option>
+                      <select class="form-select" id="indikatorsteam_id" name="indikatorsteam_id" aria-label="Floating label select example">
+                        <option value="{{$si->indikatorsteam_id}}">{{$si->indikatorsteam->nama}}</option>
                         @foreach ($indi as $i)
                           <option value="{{$i->id}}">{{$i->nama}}</option>
                         @endforeach
                       </select>
-                      <label for="indikatoriot_id">Indikator</label>
+                      <label for="indikatorsteam_id">Indikator</label>
                     </div>
                   </div>
                 </div>
@@ -83,7 +83,7 @@
                     <div class="col-lg-12">
                         <button class="btn btn-primary" type="submit">Submit</button>
                         <button class="btn btn-danger" type="reset">Reset</button>
-                        <a href="{{route('subindiiot.index')}}" class="btn btn-secondary">Batal</a>
+                        <a href="{{route('subindisteam.index')}}" class="btn btn-secondary">Batal</a>
                     </div>
                 </div>
               </form>

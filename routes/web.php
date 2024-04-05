@@ -72,17 +72,25 @@ Route::group(['middleware' => ['auth', 'login:ADMIN']], function(){
 
 // Group User
 Route::group(['middleware' => ['auth', 'login:USER']], function(){
-    Route::prefix('user')
+    Route::prefix('/')
         ->group(function () {
             Route::get('/', [DashboardController::class, 'index'])->name('dashboardUser');
 
             // Nilai IOT
             Route::get('/nilaiIot', [NilaiController::class, 'nilaiIot'])->name('nilaiIot'); //List daftar nilai siswa
             Route::get('/siswaNilaiIot/{id}', [NilaiController::class, 'siswaNilaiIot'])->name('siswaNilaiIot'); //Daftar nilai anak
-            Route::get('/masukanNilaiIot/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiIot'])->name('masukanNilaiIot'); //Memasukan nilai anak
+            Route::get('/masukanNilaiIot/{id}/{idsub}', [NilaiController::class, 'masukanNilaiIot'])->name('masukanNilaiIot'); //Memasukan nilai anak
             Route::post('/masukanNilaiStoreIot/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiStoreIot'])->name('masukanNilaiStoreIot'); //Proses masuk nilai
             Route::get('/editNilaiIot/{id}/{idkomp}', [NilaiController::class, 'editNilaiIot'])->name('editNilaiIot'); //Edit nilai anak
             Route::post('/masukanNilaiUpdateIot/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiUpdateIot'])->name('masukanNilaiUpdateIot'); //Proses edit nilai
+
+             // Nilai STEAM
+             Route::get('/nilaiSteam', [NilaiController::class, 'nilaiSteam'])->name('nilaiSteam'); //List daftar nilai siswa
+             Route::get('/siswaNilaiSteam/{id}', [NilaiController::class, 'siswaNilaiSteam'])->name('siswaNilaiSteam'); //Daftar nilai anak
+             Route::get('/masukanNilaiSteam/{id}/{idsub}', [NilaiController::class, 'masukanNilaiSteam'])->name('masukanNilaiSteam'); //Memasukan nilai anak
+             Route::post('/masukanNilaiStoreSteam/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiStoreSteam'])->name('masukanNilaiStoreSteam'); //Proses masuk nilai
+             Route::get('/editNilaiSteam/{id}/{idkomp}', [NilaiController::class, 'editNilaiSteam'])->name('editNilaiSteam'); //Edit nilai anak
+             Route::post('/masukanNilaiUpdateSteam/{id}/{idkomp}', [NilaiController::class, 'masukanNilaiUpdateSteam'])->name('masukanNilaiUpdateSteam'); //Proses edit nilai
 
             // Download Nilai
             Route::get('/downloadNilai/{id}', [NilaiController::class, 'downloadNilai'])->name('downloadNilai'); //Download Nilai

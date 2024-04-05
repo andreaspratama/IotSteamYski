@@ -18,7 +18,7 @@
                 <h2 class="fs-base lh-base fw-medium text-muted mb-0">
                   Daftar Nilai {{$item->nama}}
                 </h2>
-                <a href="/user/nilaiIot" class="btn btn-secondary mt-2">Input Nilai Siswa Lain</a>
+                <a href="/nilaiIot" class="btn btn-secondary mt-2">Input Nilai Siswa Lain</a>
               </div>
               <nav class="flex-shrink-0 mt-3 mt-sm-0 ms-sm-3" aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-alt">
@@ -41,7 +41,7 @@
           <div class="block block-rounded">
             <div class="block-header block-header-default">
               <h3 class="block-title">
-                <a href="/user/downloadNilai/{{$item->id}}" class="btn btn-primary">Download Nilai</a>
+                <a href="/downloadNilai/{{$item->id}}" class="btn btn-primary">Download Nilai</a>
               </h3>
             </div>
             <div class="block-content block-content-full">
@@ -85,7 +85,7 @@
                               @endforeach
                             </td>
                             <td class="d-none d-sm-table-cell text-center" style="width: 30%;" colspan="2">
-                              @if ($si->id === 1)
+                              @if ($si->id === 16)
                                 @foreach ($item->subindiiot as $ki)
                                   @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
@@ -98,7 +98,7 @@
                                   @endif
                                 @endforeach
                               @endif
-                              @if ($si->id === 2)
+                              @if ($si->id === 17)
                                 @foreach ($item->subindiiot as $ki)
                                   @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
@@ -111,7 +111,7 @@
                                   @endif
                                 @endforeach
                               @endif
-                              @if ($si->id === 3)
+                              @if ($si->id === 18)
                                 @foreach ($item->subindiiot as $ki)
                                   @if ($si->id === $ki->pivot->subindiiot_id)
                                     @if ($ki->pivot->skor >= 90)
@@ -127,9 +127,9 @@
                             </td>
                             <td>
                                 @if ($item->subindiiot()->where('subindiiot_id', '=' , $si->id)->exists())
-                                    <a href="/user/editNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
+                                    <a href="/editNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/masukanNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>
@@ -141,7 +141,7 @@
               <table class="table table-bordered table-striped table-vcenter js-dataTable-full" id="tablePengetahuan">
                 <thead>
                   <tr>
-                    <th colspan="6" class="text-center">PENGETAHUAN</th>
+                    <th colspan="6" class="text-center">KETRAMPILAN</th>
                     <th style="width: 10%;" class="text-center" colspan="2">Aksi</th>
                   </tr>
                   {{-- Menganalisis --}}
@@ -231,9 +231,9 @@
                             </td>
                             <td>
                                 @if ($item->subindiiot()->where('subindiiot_id', '=' , $si->id)->exists())
-                                    <a href="/user/editNilai/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
+                                    <a href="/editNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-warning">Edit Nilai</a>
                                 @else
-                                    <a href="/user/masukanNilai/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
+                                    <a href="/masukanNilaiIot/{{$item->id}}/{{$si->id}}" class="btn btn-primary">Tambah Nilai</a>
                                 @endif
                             </td>
                         </tr>

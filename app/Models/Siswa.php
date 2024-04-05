@@ -15,4 +15,9 @@ class Siswa extends Model
     {
         return $this->belongsToMany(Subindiiot::class)->withPivot(['skor', 'deskripsi']);
     }
+
+    public function subindisteam()
+    {
+        return $this->belongsToMany(Subindisteam::class)->withPivot(['skor', 'deskripsi']);
+    }
 }

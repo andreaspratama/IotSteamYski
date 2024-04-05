@@ -250,11 +250,11 @@
                         <span class="nav-main-link-name">Nilai IoT</span>
                       </a>
                     </li>
-                    {{-- <li class="nav-main-item">
-                      <a class="nav-main-link" href="{{route('nilai')}}">
+                    <li class="nav-main-item">
+                      <a class="nav-main-link" href="{{route('nilaiSteam')}}">
                         <span class="nav-main-link-name">Nilai Steam</span>
                       </a>
-                    </li> --}}
+                    </li>
                   </ul>
                 </li>
               @endif

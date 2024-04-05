@@ -93,9 +93,9 @@ class SubindisteamController extends Controller
     public function edit($id)
     {
         $si = Subindisteam::findOrFail($id);
-        $indi = Indikatoriot::all();
+        $indi = Indikatorsteam::all();
 
-        return view('pages.admin.subindiiot.edit', compact('si', 'indi'));
+        return view('pages.admin.subindisteam.edit', compact('si', 'indi'));
     }
 
     /**
@@ -111,7 +111,7 @@ class SubindisteamController extends Controller
         $item = Subindisteam::findOrFail($id);
         $item->update($data);
 
-        return redirect()->route('subindiiot.index')->with('success', 'Data Berhasil Diubah');
+        return redirect()->route('subindisteam.index')->with('success', 'Data Berhasil Diubah');
     }
 
     /**
